@@ -1,0 +1,31 @@
+ <div class="d-flex">
+  <div class="sidebar text-white p-3">
+    <h4 class="text-center mb-4 fw-bold">Manager</h4>
+    <a routerLink="/manager/cloud_kitchen_data" routerLinkActive="active">Cloud_Kitchen Data</a>
+    <a routerLink="/manager/orders" routerLinkActive="active">Orders</a>
+    <a routerLink="/manager/menu" routerLinkActive="active">Add Menu</a>
+    <a routerLink="/manager/viewSummary" routerLinkActive="active">View Summary</a>
+    <a routerLink="/manager/orderComplaint" routerLinkActive="active">Order Complaint</a>
+  </div>
+
+  <div class="content flex-grow-1 py-4">
+    <nav class="navbar navbar shadow-sm mb-1 px-3">
+
+     <button (click)="toggleCloudKitchen()" class="btn rounded-circle"
+      [ngClass]="isOpen ? 'btn-outline-success' : 'btn-outline-danger'"
+      [title]="isOpen ? 'Click to Open Cloud Kitchen' : 'Click to Close Cloud Kitchen'">
+      <i class="bi" [ngClass]="isOpen ? 'bi-unlock-fill' : 'bi-lock-fill'"></i>
+     </button>
+
+      <span class="navbar-brand mx-auto fw-bold text-dark">Manager Dashboard</span>
+       <button class="btn btn-outline-dark rounded-circle" (click)="logout()">     
+        <i class="bi bi-box-arrow-right"></i>
+       </button>
+    </nav>
+
+    <div class="main card shadow-sm p-4  text-light rounded-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> 
+

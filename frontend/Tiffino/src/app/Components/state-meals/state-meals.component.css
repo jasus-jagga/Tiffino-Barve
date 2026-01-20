@@ -1,0 +1,31 @@
+.main{
+    margin-top: 100px;
+}
+.restaurant-img{
+      border-radius: 20px;
+      height: 190px;
+    }
+    .card-button{
+      margin-left: 140px;
+      /* margin-top: -26px;     */
+    }
+    .restaurant-card1{
+      /* min-width: 312px; */
+      flex: 0 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
+      padding-bottom: 0px !important;
+    }
+
+    .closed-card {
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.7;
+  pointer-events: none; 
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.closed-card .card-button {
+  pointer-events: auto; 
+}

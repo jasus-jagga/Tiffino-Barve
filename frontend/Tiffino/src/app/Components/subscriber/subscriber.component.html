@@ -1,0 +1,18 @@
+<div class="container my-4 text-dark">
+  <h3 class="mb-3">📋 Subscribers List</h3>
+
+  <div *ngFor="let sub of subscriber" class="card p-2 mb-2">
+  <h5>{{ sub.userName }}</h5>
+  <p>Email: {{ sub.userEmail }}</p>
+  <p>Subscription: {{ sub.subscriptionName }}</p>
+  <p>Price: ₹{{ sub.price }}</p>
+</div>
+
+</div>
+<div class="container mt-4" *ngIf="subscriber && subscriber.length === 0">
+  <div class="alert alert-warning text-center">
+    <i class="bi bi-exclamation-circle"></i> No Subscriber found.
+  </div>
+</div>
+
+

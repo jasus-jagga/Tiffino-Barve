@@ -1,0 +1,138 @@
+<div class="position-fixed top-0 start-0 end-0 z-3">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="all">
+  <!-- Search bar -->
+  <!-- <div class="container mt-2">
+    <div class="row justify-content-center">
+      <div class="search-bar d-flex">
+        <input type="text" class="form-control search-input flex-grow-1" placeholder="Search for food...">
+        <i class="bi bi-search search-icon ms-2"></i>
+      </div>
+    </div>
+  </div> -->
+
+       
+
+  <div class="container my-4 box1 ">
+    <div class="row justify-content-center">
+
+      <div class="col-md-12 mb-5 heading">What's on your mind?</div>
+      <div class="d-flex w-100 overflow-auto">
+
+       <div class="marquee" #container>
+      <div class="marquee-content d-flex" #marquee>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 category-item" *ngFor="let row of allCuisine">
+          <div (click)="getdata(row.state)">
+            <img
+            [src]="row.cuisinePhoto"alt="cuisinePhoto">
+          <div>{{row.name}}</div>
+          </div>
+        </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+
+
+     
+
+
+  <div class="container py-5 cards">
+    <h5 class="fw-bold py-4  heading">Order Food Online From Your Region </h5>
+
+    
+
+<div class="row g-4">
+
+  <ng-container *ngFor="let row of data">
+    <ng-container *ngFor="let kitchen of row.kitchens">
+      <div class="col-md-3 col-sm-6">
+        <div class="restaurant-card1"
+         [ngClass]="{ 'closed-card': !kitchen.isOpened }"
+         [attr.title]="!kitchen.isOpened ? 'This cloud kitchen is temporarily closed' : null">
+          <div class="position-relative">
+            <img [src]="row.photos" class="w-100 restaurant-img"
+                 alt="{{ row.mealName }}" (click)="openPopup(row)">
+            
+            <div class="price-banner"> price :
+              <span *ngIf="row.originalPrice === row.finalPrice">
+                ₹ {{ row.finalPrice }} /-
+              </span>
+              <span *ngIf="row.originalPrice !== row.finalPrice"> 
+                <span class="text-muted text-decoration-line-through me-2">
+                  ₹ {{ row.originalPrice }} /-
+                </span>
+                <span class="fw-bold text-success">
+                  ₹ {{ row.finalPrice }} /-
+                </span>
+              </span>
+            </div>
+
+            <div class="p-1">
+              <span class="badge  bg-light text-dark">{{ row.cuisine }}</span>
+              <h6 class="mb-1 meal">{{ row.mealName }}</h6>
+              <div class="small mb-1 rating">
+                <i class="bi bi-star-fill text-warning"></i> 3.7 • 45–55 mins
+              </div>
+            </div>
+
+            <div class="text-muted small">
+              <i class="bi bi-geo-alt text-danger cloudKitcen"></i>{{ kitchen.cloudKitchenName }}
+              <button class="btn btn-outline-success card-button"
+             
+        (click)="addToCart(row, kitchen)"
+          [disabled]="!kitchen.isOpened"
+        [routerLink]="checkIsItemInCart(row.mealId, kitchen.cloudKitchenId) ? '/cart' : '/'">
+         {{ checkIsItemInCart(row.mealId, kitchen.cloudKitchenId) ? 'Go to Cart' : 'Add to Cart' }}
+       </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+</div>
+</div>
+
+      <!-- Card End -->
+     
+      <div class="container locality my-4">
+        <h4 class="fw-bold mb-4">Explore localities in and around You</h4>
+        <div class="row gy-3" >
+          <div class="col-6 col-sm-4 col-md-2 "  *ngFor="let row of allCuisine">
+            <div class="locality-btn"  (click)="getdata(row.state)">{{row.state}}</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    
+<button class="help-btn" (click)="openChat()">
+  <i class="fa fa-question-circle"></i>
+  <span class="tooltip-text" >Help</span>
+</button>
+
+
+     
+
+    <app-footer></app-footer>
+
+
+
+
+
+
+
+    

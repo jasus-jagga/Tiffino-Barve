@@ -1,0 +1,29 @@
+.help-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.accordion-button {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid rgb(202, 201, 201);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #d9dadc;
+}
+
+.accordion-body {
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+}
+.accordion-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+
+
+

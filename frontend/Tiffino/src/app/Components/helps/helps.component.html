@@ -1,0 +1,29 @@
+  <app-navbar></app-navbar>
+
+ <div class="help-container p-5">
+  <h3 class="fw-bold  ">Help & Support</h3>
+    <p>Let's take a step ahead and help you better.</p>
+
+  <div class="accordion shadow-lg rounded-4 p-3 bg-white" id="partnerAccordion">
+    <div class="accordion-item border-0 mb-3" *ngFor="let item of partnerFaqs; let i = index">
+      <h2 class="accordion-header">
+        <button 
+          class="accordion-button fw-semibold"
+          type="button"
+          [class.collapsed]="activeIndex !== i"
+          (click)="toggleAccordion(i)">
+          {{ item.question }}
+        </button>
+      </h2>
+      <div 
+        class="accordion-collapse collapse" 
+        [class.show]="activeIndex === i">
+        <div class="accordion-body">
+          <span [innerHTML]="item.answer"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+

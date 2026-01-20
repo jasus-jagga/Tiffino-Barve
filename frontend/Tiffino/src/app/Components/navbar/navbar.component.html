@@ -1,0 +1,76 @@
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./../../../assets/images/shidori_logo1.png" alt="Logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item d-flex align-items-center">
+           <i class="fa-solid fa-house"></i>
+           <a class="nav-link active" href="/">Home</a>
+          </li>
+
+          <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <a class="nav-link active" href="/searchfilterUser">Search</a>
+   </li>
+
+   <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-circle-question"></i>
+    <a class="nav-link active" href="/helps">Help</a>
+   </li>
+
+   <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-bell"></i>
+    <a class="nav-link active" href="/user_subscription">Subscription</a>
+   </li>
+
+   <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-gift "></i>
+    <a class="nav-link active position-relative" href="/gift_card">Gift Card</a>
+    <span *ngIf="giftCard" class="badge bg-dark text-light" style="font-size:10px;position:absolute;margin-left: 80px;margin-bottom: 33px;">NEW</span>
+   </li>
+
+    <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-tag "></i>
+    <a class="nav-link active position-relative" href="/offer">Offers</a>
+    <span *ngIf="offers" class="badge bg-dark text-light" style="font-size:10px;position:absolute;margin-left: 65px;margin-bottom: 30px;">NEW</span>
+    </li>
+    <li class="nav-item d-flex align-items-center">
+    <i class="fa-solid fa-cart-shopping "></i>
+    <a class="nav-link active" href="/cart">Cart</a>
+    <span class="badge bg-dark text-light" style="font-size:10px;position:absolute;margin-left: 60px;margin-bottom: 30px;">{{cart}}</span>
+    </li>
+    </ul>
+
+     <div>
+    <div class="dropdown">
+  <i *ngIf="isLoggedIn" class="bi bi-person-circle h1"
+     role="button"
+     id="profileDropdown"
+     data-bs-toggle="dropdown"
+     aria-expanded="false"
+     style="cursor:pointer"
+     >
+  </i>
+
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+    <li><a class="dropdown-item" routerLink="/myProfile"><i class="bi bi-person"></i>My Profile</a></li>
+    <li><a class="dropdown-item" routerLink="/myOrders"><i class="bi bi-bag"></i>My Orders</a></li>
+    <li><a class="dropdown-item text-danger" (click)="logout()"><i class="bi bi-box-arrow-right"></i>
+        Logout</a></li>
+  </ul>
+</div>
+     <button *ngIf="!isLoggedIn" class="btn btn-outline-light login-btn "routerLink="/login" type="submit">Sign In</button>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+ 

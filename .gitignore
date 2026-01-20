@@ -1,0 +1,8 @@
+cat <<EOF > .gitignore
+.bash*
+.cache/
+.ssh/
+.m2/
+.docker/
+EOF
+

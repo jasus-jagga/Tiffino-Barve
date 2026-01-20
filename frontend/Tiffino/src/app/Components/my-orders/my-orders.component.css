@@ -1,0 +1,59 @@
+.container{
+    margin-top: 100px;
+}
+.row{
+    height: 70px;
+    background-color: aqua;
+    width: 70%;
+   margin-left: 15%;
+}
+.ratting{
+  margin-right: 250px;
+}
+.card {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.img-thumbnail {
+  border-radius: 8px;
+}
+.card {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.img-thumbnail {
+  border-radius: 8px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+.noOrder{
+  margin-top: 10%;
+}
+
+.chatbot-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.chatbot-box {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  /* height: 500px; */
+  width: 500px;
+  background: #fff;
+  z-index: 1000;
+}
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<div class="position-fixed top-0 start-0 end-0 z-3">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="main d-flex justify-content-center align-items-center mt-5">
+  <div class="offer-container text-center text-dark">
+    
+    <div
+      *ngIf="offers && !offers.includes('No offers'); else noOffer"
+      class="offer-card shadow-lg p-4 rounded-4 text-white animate__animated animate__fadeIn"
+    >
+      <div class="icon mb-3">
+        <i class="bi bi-gift-fill fs-1"></i>
+      </div>
+      <h2 class="fw-bold fs-4 mb-2">🎉 Today's Offer 🎉</h2>
+      <p class="fs-5 mb-0">{{ offers }}</p>
+      <button class="btn btn-light rounded-pill mt-3 px-4 py-2 fw-semibold" routerLink="/">
+        Grab Offer
+      </button>
+    </div>
+
+    <ng-template #noOffer>
+      <div
+        class="no-offer-card shadow-sm p-4 rounded-4 text-center text-muted animate__animated animate__fadeIn"
+      >
+        <i class="bi bi-emoji-frown fs-1 mb-3 text-secondary"></i>
+        <h3 class="text-dark fs-5 mb-2">No Offers Available</h3>
+        <p class="mb-0">{{ offers }}</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+
+
+
+
+
+

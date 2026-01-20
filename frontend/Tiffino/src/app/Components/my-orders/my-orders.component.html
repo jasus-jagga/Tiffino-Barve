@@ -1,0 +1,143 @@
+ <div class="position-fixed top-0 start-0 end-0 z-3">
+  <app-navbar></app-navbar>
+</div>
+
+< class="container ">
+
+  <div *ngIf="orders && orders.length > 0; else noOrders">
+    <div *ngFor="let order of orders" 
+         class="card border-0 rounded-4 shadow-lg mb-5 overflow-hidden">
+
+      <div class="bg-light p-3 border-bottom">
+        <h6 class="mb-0 text-secondary">
+          🛒 Order • <small class="text-muted">{{ order.orderDate }}</small>
+        </h6>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center p-4">
+        <div class="div1 flex-grow-1">
+          <div *ngFor="let meal of order.orderMealsResponses; let last = last"
+               class="d-flex align-items-center py-3"
+               [ngClass]="{ 'border-bottom': !last }">
+            <div class="d-flex align-items-center w-100">
+              <img [src]="meal.mealPhotos"
+                   alt="{{ meal.mealName }}"
+                   class="rounded-3 shadow-sm me-3 border"
+                   style="width: 80px; height: 80px; object-fit: cover;">
+
+              <div class="d-flex flex-column">
+                <h6 class="mb-1 fw-bold text-dark">{{ meal.mealName }}</h6>
+                <small class="text-muted mb-2">Qty: {{ meal.mealQuantity }}</small>
+                <small class="text-muted mb-2">Price: ₹ {{ meal.mealPrice }} /-</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="order.orderStatus === 'DELIVERED'" 
+             class="text-primary fw-semibold text-decoration-none small ratting" 
+             (click)="openPopUp(order.orderId)" style="cursor: pointer;">
+          ⭐ Rate & Review
+        </div>
+
+        <div class="div2 ms-4 text-center d-flex flex-column justify-content-center bg-light p-3 rounded-3 shadow-sm" 
+             style="min-width: 200px;">
+          <p class="fw-bold fs-4 text-dark mb-2">₹ {{ order.totalCost }} /-</p>
+          <p class="mb-0">
+             <span *ngIf="order.orderStatus === 'PENDING'" 
+                  class="badge bg-danger rounded-pill px-3 py-2 fs-6 shadow-sm">
+              ⏳ Pending
+            </span>
+             <span *ngIf="order.orderStatus === 'ACCEPTED-ORDER'" 
+                  class="badge bg-danger rounded-pill px-3 py-2 fs-6 shadow-sm">
+              ⏳ Accept Your Order
+            </span>
+            <span *ngIf="order.orderStatus === 'ORDER-PREPARED'" 
+                  class="badge bg-danger rounded-pill px-3 py-2 fs-6 shadow-sm">
+              ⏳ Prepare Your Order
+            </span>
+            <span *ngIf="order.orderStatus === 'DELIVERED'" 
+                  class="badge bg-success rounded-pill px-3 py-2 fs-6 shadow-sm">
+              ✔ Delivered
+            </span>
+            <span *ngIf="order.orderStatus === 'OUT_FOR_DELIVERY'" 
+                  class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6 shadow-sm">
+              🚚 Out for Delivery
+            </span>
+           
+            <span *ngIf="order.orderStatus === 'ASSIGNED_TO_DELIVERY'" 
+                  class="badge bg-secondary rounded-pill px-3 py-2 fs-6 shadow-sm">
+              👤 Assign
+            </span>
+            <span *ngIf="order.orderStatus === 'CANCELLED'" 
+                  class="badge bg-danger rounded-pill px-3 py-2 fs-6 shadow-sm">
+              ❌ Cancelled
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-light border-top p-3 text-end">
+        <button 
+           class="btn btn-danger btn-sm rounded-pill shadow-sm ms-2"  
+           *ngIf="order.orderStatus === 'PENDING'" 
+           (click)="cancelOrder(order.orderId)">
+          ❌ Cancel 
+       </button>
+        <button 
+           class="btn btn-outline-danger btn-sm rounded-pill shadow-sm ms-2"  
+           *ngIf="order.orderStatus === 'DELIVERED'"
+           (click)="openChatbot(order.orderId)">
+           ❓ Help
+        </button>
+
+        <button class="btn btn-outline-primary btn-sm rounded-pill shadow-sm ms-2" 
+                (click)="viewInvoice(order)">
+          📄 View Invoice
+        </button>
+        <button 
+           class="btn btn-success btn-sm rounded-pill shadow-sm ms-2" 
+           [routerLink]="['/trackOrder', order.orderId]">
+          🚚 Track Order
+       </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- No Orders Message -->
+  <ng-template #noOrders>
+    <div class="text-center noOrder p-5 text-muted">
+      <i class="bi bi-bag-x fs-1 d-block mb-3"></i>
+      <h4>No orders yet</h4>
+      <p class="text-secondary">You haven’t placed any orders yet.</p>
+      <a routerLink="/" class="btn btn-warning mt-3 rounded-pill px-4">
+        add Items
+      </a>
+    </div>
+  </ng-template>
+
+ 
+<div class="chatbot-backdrop" *ngIf="chatbotVisible" (click)="closeChatbot()"></div>
+
+<div class="chatbot-box shadow-lg rounded-4 p-3" *ngIf="chatbotVisible">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h6 class="m-0 text-danger">Tiffino Help Chat</h6>
+    <button class="btn btn-sm btn-light" (click)="closeChatbot()">✖</button>
+  </div>
+
+        <iframe *ngIf="iframeSrc" [src]="iframeSrc" width="480" height="500"></iframe>
+    
+</div> 
+
+
+ 
+
+
+
+
+
+
+
+ 

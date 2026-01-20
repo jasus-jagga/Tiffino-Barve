@@ -1,0 +1,33 @@
+.main{
+  margin-top: 150px;
+}
+
+.offer-container {
+  max-width: 600px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.offer-card {
+  background: linear-gradient(135deg, #e79a6b, #cacdad);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.no-offer-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.no-offer-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.main {
+  min-height: 70vh;
+}

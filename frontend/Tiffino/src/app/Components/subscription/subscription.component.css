@@ -1,0 +1,32 @@
+.card{
+    width: 550px;
+    background-image: linear-gradient(to bottom right, rgb(246, 246, 213),rgb(248, 225, 225));
+    margin-top: 100px;
+    position: absolute;
+    display: flex;
+}
+button{
+    background-image: linear-gradient(90deg, #FF512F, #FF7043);
+
+}
+.custom-border{
+  border: 1px solid orange;
+}
+.mat-mdc-form-field-flex{
+    border: 1px solid orange !important;
+
+}
+::ng-deep .allergies-field .mat-form-field-outline {
+  stroke: orange !important; 
+}
+::ng-deep .mdc-notched-outline {
+  border: 1px solid orange !important;
+
+}
+::ng-deep .form-select{
+background: transparent !important;
+}
+::ng-dep input{
+background: transparent !important;
+
+}

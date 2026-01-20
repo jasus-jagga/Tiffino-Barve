@@ -1,0 +1,68 @@
+package com.tiffino.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+@Builder
+@Entity
+@Table(name = "user")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private Long userId;
+
+    @Column(name = "user_name")
+    private String userName;
+
+    @Column(unique = true, name = "phone_no")
+    private String phoneNo;
+
+    @Column(name = "email", unique = true, nullable = false)
+    private String email;
+
+    @Column(name = "password")
+    private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonManagedReference
+    @JsonIgnore
+    private Set<UserSubscription> subscriptions = new HashSet<>();
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "meal_preference")
+    private String mealPreference;
+
+    @Column(name = "dietary_needs")
+    private String dietaryNeeds;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role = Role.USER;
+
+    @Transient
+    private DurationType durationType;
+
+    @Transient
+    private LocalDate endDate;
+
+    @Transient
+    private LocalTime endTime;
+}

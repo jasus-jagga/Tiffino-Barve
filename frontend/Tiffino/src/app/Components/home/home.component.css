@@ -1,0 +1,258 @@
+.img_height{
+    height: 580px;
+}
+.carousel-caption{
+    margin-left: -200px;
+    margin-bottom:150px;
+}
+.tiffino{
+    font-weight: bold;
+    font-size:80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+.searchbar{
+  width: 40%;
+  border-radius: 40px;
+}
+.all{
+  position: relative;
+  top: 5rem;
+}
+
+.category-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .category-item {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .d-flex.w-100.overflow-auto {
+  scrollbar-width: none; 
+}
+
+.d-flex.w-100.overflow-auto::-webkit-scrollbar {
+  display: none; 
+}
+.heading{
+    font-weight: bold;
+    font-size: 25px;
+}
+.box1{
+    height: 310px;
+    border-bottom: 1px solid rgb(216, 211, 211);
+}
+.topcard_button{
+  margin-left: 230px;
+  margin-top:-70px;
+}
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding-bottom: 80px;
+    border-bottom: 1px solid rgb(216, 211, 211);
+    }
+    .cards {
+    border-bottom: 1px solid rgb(216, 211, 211);
+    margin-top: -80px;
+    }  
+    
+    .restaurant-card {
+      min-width: 312px;
+      flex: 0 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
+      transform: translateY(-10px)
+    }
+    .shidori-card{
+      min-width: 312px;
+      flex: 0 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .img-fluid{
+        border-radius: 20px;
+        height: 200px;
+        width: 100%;
+    }
+    .meal{
+      margin-left: 13px;
+    }
+    .restaurant-img{
+      border-radius: 20px;
+      height: 190px;
+    }
+    .badge{
+      margin-left: 7px;
+    }
+     .rating {
+      color: #28a745;
+      font-weight: 600;
+      margin-left: 13px;
+    }
+ .search-bar {
+      background-color: #f1f1f6;
+      border-radius: 1.5rem;
+      padding: 0.5rem 1rem;
+       width: 50%;
+    }
+    .search-input {
+      border: none;
+      background: transparent;
+      outline: none;
+      box-shadow: none;
+      justify-content: center;
+      align-items: center;
+ }
+    .search-icon {
+      color: #060606;
+      justify-content: center;
+      margin-top: 6px;
+      margin-right: 5px;
+    }
+     .restaurant-card1:hover {
+      transform: translateY(-10px);
+    }
+     .restaurant-card1{
+      /* min-width: 210px; */
+      flex: 0 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
+      padding-bottom: 0px !important;
+    }
+    .card-button{
+      margin-left: 140px;
+      /* margin-top: -26px;     */
+    }
+    .locality-btn {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f2f3f4; 
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      color: #212529;
+      cursor: pointer;
+    }
+    .locality-btn:hover {
+      background-color: #e9ecef;
+      color: red;
+    }
+    .locality{
+      height: 40vh;
+    }
+   .pricing-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      border:2px solid #ff6600 ;
+    }
+    .subscribe-btn {
+      background-color: #ff6600;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .subscribe-btn:hover {
+      background-color: #e65c00;
+    }
+ .price-banner{
+  margin-left: 20px;
+  margin-top: 10px;
+ }
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+.category-item img {
+  width: 60%;
+  border-radius: 50%;
+}
+.cloudKitcen{
+  margin-left: 20px;
+}
+
+
+.closed-card {
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.7;
+  pointer-events: none; 
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.closed-card .card-button {
+  pointer-events: auto; 
+}
+
+
+.help-btn {
+  position: fixed;
+  bottom: 300px;
+  right: 20px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+  transition: all 0.3s ease;
+}
+
+.help-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.1);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 10px;
+  position: absolute;
+  right: 60px;
+  bottom: 18px;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.help-btn:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
