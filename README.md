@@ -1,46 +1,67 @@
 🐳 Tiffino-Barve – Project Command History
-
+<br>
 This document describes the step-by-step commands used to set up, build, and run the Tiffino-Barve application using Docker and Docker Compose.
-
+<br>
 1️⃣ Install Docker & Docker Compose
 <br>
-sudo apt update
+    sudo apt update
 <br>
-sudo apt install -y docker.io docker-compose
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo usermod -aG docker $USER
-newgrp docker
-
-
+    sudo apt install -y docker.io docker-compose
+    <br>
+<br>
+    sudo systemctl enable docker
+<br>
+    sudo systemctl start docker
+<br>
+    sudo usermod -aG docker $USER
+<br>
+    newgrp docker
+<br>
+<br>
 ℹ️ newgrp docker applies Docker group permissions immediately without logging out.
-
+<br>
 2️⃣ Clone the Project Repository
-git clone https://github.com/jasus-jagga/Tiffino-Barve.git
-cd Tiffino-Barve
-
+<br>
+    git clone https://github.com/jasus-jagga/Tiffino-Barve.git
+<br>
+    cd Tiffino-Barve
+<br>
+<br>
 3️⃣ Build Backend Docker Image
-cd Tiffino
-docker build -t backendimage .
-cd ..
-
+<br>
+   cd Tiffino
+<br>
+   docker build -t backendimage .
+<br>
+   cd ..
+<br>
+<br>
 4️⃣ Build Frontend Docker Image
-cd frontend/Tiffino
-docker build -t frontendimage .
-cd ../..
-
+<br>
+   cd frontend/Tiffino
+<br>
+   docker build -t frontendimage .
+<br>
+   cd ../..
+<br>
+<br>
 5️⃣ Verify Docker Images
-docker images
-
-
+<br>
+    docker images
+<br>
+<br>
 Expected images:
-
-backendimage:latest
-
-frontendimage:latest
-
+<br>
+   backendimage:latest
+<br>
+   frontendimage:latest
+<br>
+<br>
 6️⃣ Start Application Using Docker Compose
-docker-compose up -d
-
+<br>
+    docker-compose up -d
+<br>
+<br>
 7️⃣ Verify Running Containers
-docker ps
+<br>
+   docker ps
