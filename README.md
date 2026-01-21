@@ -8,7 +8,6 @@ This document describes the step-by-step commands used to set up, build, and run
 <br>
     sudo apt install -y docker.io docker-compose
     <br>
-<br>
     sudo systemctl enable docker
 <br>
     sudo systemctl start docker
