@@ -3,7 +3,9 @@
 This document describes the step-by-step commands used to set up, build, and run the Tiffino-Barve application using Docker and Docker Compose.
 
 1️⃣ Install Docker & Docker Compose
+<br>
 sudo apt update
+<br>
 sudo apt install -y docker.io docker-compose
 sudo systemctl enable docker
 sudo systemctl start docker
